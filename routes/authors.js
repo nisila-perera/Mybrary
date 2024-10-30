@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
             throw new Error('Author name is required')
         }
         const newAuthor = await author.save()
+        //res.redirect(`authors/${newAuthor.id}`)
         res.redirect('authors')
     } catch (err) {
         res.render('authors/new', {
